@@ -38,7 +38,9 @@ $ npm install @form8ion/remove-greenkeeper --save-prod
 ### Example
 
 ```javascript
-import removeGreenkeeper from '@form8ion/remove-greenkeeper';
+import {removeGreenkeeper} from '@form8ion/remove-greenkeeper';
+
+removeGreenkeeper();
 ```
 
 ## Contributing
