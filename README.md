@@ -40,7 +40,7 @@ $ npm install @form8ion/remove-greenkeeper --save-prod
 ```javascript
 import {removeGreenkeeper} from '@form8ion/remove-greenkeeper';
 
-removeGreenkeeper();
+removeGreenkeeper({projectRoot: process.cwd()});
 ```
 
 ## Contributing
