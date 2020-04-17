@@ -9,5 +9,5 @@ Before(async function () {
 After(() => stubbedFs.restore());
 
 When('the tool is executed', async function () {
-  await removeGreenkeeper();
+  await removeGreenkeeper({projectRoot: process.cwd()});
 });
