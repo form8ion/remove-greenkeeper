@@ -1,0 +1,6 @@
+_extends: .github
+repository:
+  name: remove-greenkeeper
+  description: A tool to remove Greenkeeper details from an existing project
+  homepage: 'https://npm.im/@form8ion/remove-greenkeeper'
+  private: false
