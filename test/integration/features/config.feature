@@ -1,4 +1,4 @@
-Feature: removal of Greenkeeper
+Feature: removal of the Greenkeeper config file
 
   Scenario: the config file needs to be removed
     Given a config file exists
