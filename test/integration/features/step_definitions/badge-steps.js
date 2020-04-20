@@ -31,7 +31,7 @@ Given('a greenkeeper badge exists with references', async function () {
 Then('the greenkeeper badge is removed from the README', async function () {
   assert.equal(
     await fs.readFile(pathToReadme, 'utf8'),
-    `# some project
+    `# some-project
 `
   );
 });

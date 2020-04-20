@@ -2,6 +2,7 @@ import any from '@travi/any';
 import sinon from 'sinon';
 import {assert} from 'chai';
 import * as configRemover from './config';
+import * as badgeRemover from './badge';
 import removeGreenkeeper from './remove-greenkeeper';
 
 suite('removal', () => {
@@ -11,6 +12,7 @@ suite('removal', () => {
     sandbox = sinon.createSandbox();
 
     sandbox.stub(configRemover, 'default');
+    sandbox.stub(badgeRemover, 'default');
   });
 
   teardown(() => sandbox.restore());
@@ -21,5 +23,6 @@ suite('removal', () => {
     await removeGreenkeeper({projectRoot});
 
     assert.calledWith(configRemover.default, {projectRoot});
+    assert.calledWith(badgeRemover.default, {projectRoot});
   });
 });

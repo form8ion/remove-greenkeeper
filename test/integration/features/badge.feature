@@ -1,6 +1,5 @@
 Feature: removal of the Greenkeeper badge
 
-  @wip
   Scenario: inline badge
     Given an inline greenkeeper badge exists
     When the tool is executed
