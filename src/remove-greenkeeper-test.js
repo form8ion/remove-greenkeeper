@@ -20,7 +20,7 @@ suite('removal', () => {
   test('that greenkeeper details are removed', async () => {
     const projectRoot = any.string();
 
-    await removeGreenkeeper({projectRoot});
+    assert.deepEqual(await removeGreenkeeper({projectRoot}), {});
 
     assert.calledWith(configRemover.default, {projectRoot});
     assert.calledWith(badgeRemover.default, {projectRoot});

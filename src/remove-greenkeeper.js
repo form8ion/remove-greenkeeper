@@ -9,4 +9,6 @@ export default async function ({projectRoot}) {
     removeConfigFile({projectRoot}),
     removeBadge({projectRoot})
   ]);
+
+  return {};
 }
