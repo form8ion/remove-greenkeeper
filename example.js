@@ -1,3 +1,14 @@
+// #### Import
 // remark-usage-ignore-next
-/* eslint-disable-next-line no-unused-vars */
-import removeGreenkeeper from './lib/index.cjs';
+import stubbedFs from 'mock-fs';
+import {removeGreenkeeper} from './lib/index.cjs';
+
+// remark-usage-ignore-next
+stubbedFs();
+
+// #### Execute
+
+removeGreenkeeper({projectRoot: process.cwd()});
+
+// remark-usage-ignore-next
+stubbedFs.restore();
