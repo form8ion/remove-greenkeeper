@@ -20,7 +20,16 @@ suite('removal', () => {
   test('that greenkeeper details are removed', async () => {
     const projectRoot = any.string();
 
-    assert.deepEqual(await removeGreenkeeper({projectRoot}), {});
+    assert.deepEqual(
+      await removeGreenkeeper({projectRoot}),
+      {
+        nextSteps: [
+          'Remove the project from the list managed by the Greenkeeper GitHub App',
+          'Remove the greenkeeper-keeper webhook',
+          'Remove open PRs and branches that were opened by Greenkeeper'
+        ]
+      }
+    );
 
     assert.calledWith(configRemover.default, {projectRoot});
     assert.calledWith(badgeRemover.default, {projectRoot});
