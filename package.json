@@ -78,6 +78,6 @@
   "dependencies": {
     "@travi/cli-messages": "^1.0.1",
     "remark": "^13.0.0",
-    "remark-remove-greenkeeper-badge": "1.2.2"
+    "remark-remove-greenkeeper-badge": "1.2.3"
   }
 }
