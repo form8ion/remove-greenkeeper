@@ -14,7 +14,7 @@ export default function ({projectRoot}) {
       .process(fs.readFileSync(pathToReadme, 'utf8'), (err, file) => {
         if (err) reject(err);
         else {
-          fs.writeFileSync(pathToReadme, file);
+          fs.writeFileSync(pathToReadme, file.contents);
           resolve();
         }
       });
