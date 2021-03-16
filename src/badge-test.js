@@ -30,7 +30,7 @@ suite('badge removal', () => {
     const existingFileContents = any.string();
     const updatedFileContents = any.string();
     fs.readFileSync.withArgs(pathToReadmeFile, 'utf8').returns(existingFileContents);
-    process.withArgs(existingFileContents).yields(null, updatedFileContents);
+    process.withArgs(existingFileContents).yields(null, {contents: updatedFileContents});
 
     await removeBadge({projectRoot});
 
