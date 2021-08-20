@@ -42,7 +42,8 @@
     "test:integration:wip": "run-s 'test:integration:base -- --profile wip'",
     "test:integration:focus": "run-s 'test:integration:base -- --profile focus'",
     "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint:peer": "npm ls >/dev/null"
+    "lint:peer": "npm ls >/dev/null",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/register": "7.15.3",
