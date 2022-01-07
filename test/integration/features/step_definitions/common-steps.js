@@ -1,6 +1,6 @@
 import {resolve} from 'path';
 import stubbedFs from 'mock-fs';
-import {After, Before, When} from 'cucumber';
+import {After, Before, When} from '@cucumber/cucumber';
 import {removeGreenkeeper} from '../../../../lib/index.cjs';
 
 Before(async function () {
