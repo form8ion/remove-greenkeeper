@@ -55,7 +55,7 @@
     "@form8ion/remark-lint-preset": "1.0.13",
     "@travi/any": "2.0.20",
     "ban-sensitive-files": "1.9.18",
-    "c8": "7.11.2",
+    "c8": "7.11.3",
     "chai": "4.3.6",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
