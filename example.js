@@ -4,7 +4,7 @@ import stubbedFs from 'mock-fs';
 import {removeGreenkeeper} from './lib/index.cjs';
 
 // remark-usage-ignore-next
-stubbedFs();
+stubbedFs({'README.md': ''});
 
 // #### Execute
 
