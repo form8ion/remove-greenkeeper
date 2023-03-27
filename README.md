@@ -48,7 +48,7 @@ import {removeGreenkeeper} from '@form8ion/remove-greenkeeper';
 #### Execute
 
 ```javascript
-removeGreenkeeper({projectRoot: process.cwd()});
+await removeGreenkeeper({projectRoot: process.cwd()});
 ```
 
 ## Contributing

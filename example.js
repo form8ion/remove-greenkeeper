@@ -4,11 +4,11 @@ import stubbedFs from 'mock-fs';
 import {removeGreenkeeper} from './lib/index.js';
 
 // remark-usage-ignore-next
-stubbedFs({'README.md': ''});
+stubbedFs({'README.md': '', node_modules: stubbedFs.load('node_modules')});
 
 // #### Execute
 
-removeGreenkeeper({projectRoot: process.cwd()});
+await removeGreenkeeper({projectRoot: process.cwd()});
 
 // remark-usage-ignore-next
 stubbedFs.restore();

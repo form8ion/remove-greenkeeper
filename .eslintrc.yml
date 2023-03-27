@@ -2,6 +2,9 @@ extends:
   - '@form8ion'
   - '@form8ion/cucumber'
 
+parserOptions:
+  ecmaVersion: 2022
+
 overrides:
   - files: example.js
     rules:

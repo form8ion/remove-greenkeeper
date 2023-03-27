@@ -1,11 +1,12 @@
-import fs from 'node:fs';
+import {promises as fs} from 'node:fs';
+import {VFile} from 'vfile';
+import * as remark from 'remark';
 import removeBadgePlugin from 'remark-remove-greenkeeper-badge';
 
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 import any from '@travi/any';
 import {when} from 'jest-when';
 
-import * as remark from '../thirdparty-wrappers/remark.js';
 import removeBadge from './badge.js';
 
 describe('badge removal', () => {
@@ -14,11 +15,11 @@ describe('badge removal', () => {
 
   beforeEach(() => {
     vi.mock('node:fs');
-    vi.mock('../thirdparty-wrappers/remark.js');
+    vi.mock('remark');
 
     const use = vi.fn();
     process = vi.fn();
-    remark.default.mockReturnValue({use});
+    remark.remark.mockReturnValue({use});
     when(use).calledWith(removeBadgePlugin).mockReturnValue({process});
   });
 
@@ -30,23 +31,17 @@ describe('badge removal', () => {
     const pathToReadmeFile = `${projectRoot}/README.md`;
     const existingFileContents = any.string();
     const updatedFileContents = any.string();
-    when(fs.readFileSync).calledWith(pathToReadmeFile, 'utf8').mockReturnValue(existingFileContents);
-    process.mockImplementation((contents, callback) => {
-      if (existingFileContents === contents) {
-        return callback(null, {contents: updatedFileContents});
-      }
-
-      return undefined;
-    });
+    when(fs.readFile).calledWith(pathToReadmeFile, 'utf8').mockReturnValue(existingFileContents);
+    when(process).calledWith(existingFileContents).mockResolvedValue(new VFile(updatedFileContents));
 
     await removeBadge({projectRoot});
 
-    expect(fs.writeFileSync).toHaveBeenCalledWith(pathToReadmeFile, updatedFileContents);
+    expect(fs.writeFile).toHaveBeenCalledWith(pathToReadmeFile, updatedFileContents);
   });
 
   it('should reject the promise for a processing failure', async () => {
     const error = new Error('from test');
-    process.mockImplementation((contents, callback) => callback(error));
+    process.mockRejectedValue(error);
 
     try {
       await removeBadge({projectRoot});
