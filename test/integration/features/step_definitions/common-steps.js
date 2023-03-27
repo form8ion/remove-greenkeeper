@@ -1,7 +1,9 @@
-import {resolve} from 'path';
+import {resolve} from 'node:path';
+
 import stubbedFs from 'mock-fs';
 import {After, Before, When} from '@cucumber/cucumber';
-import {removeGreenkeeper} from '../../../../lib/index.cjs';
+
+import {removeGreenkeeper} from '../../../../lib/index.cjs.js';
 
 Before(async function () {
   stubbedFs({

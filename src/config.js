@@ -1,5 +1,5 @@
+import {promises as fs} from 'node:fs';
 import {info, success, warn} from '@travi/cli-messages';
-import {promises as fs} from 'fs';
 
 export default async function removeConfigFile({projectRoot}) {
   try {

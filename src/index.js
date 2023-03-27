@@ -1,1 +1,1 @@
-export {default as removeGreenkeeper} from './remove-greenkeeper';
+export {default as removeGreenkeeper} from './remove-greenkeeper.js';

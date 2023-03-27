@@ -1,7 +1,8 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import {info} from '@travi/cli-messages';
 import removeBadgePlugin from 'remark-remove-greenkeeper-badge';
-import remark from '../thirdparty-wrappers/remark';
+
+import remark from '../thirdparty-wrappers/remark.js';
 
 export default function ({projectRoot}) {
   info('Removing Greenkeeper badge', {level: 'secondary'});

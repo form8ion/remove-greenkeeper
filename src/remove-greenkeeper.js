@@ -1,6 +1,7 @@
 import {info} from '@travi/cli-messages';
-import removeConfigFile from './config';
-import removeBadge from './badge';
+
+import removeConfigFile from './config.js';
+import removeBadge from './badge.js';
 
 export default async function ({projectRoot}) {
   info('Removing Greenkeeper Details');
