@@ -1,9 +1,13 @@
-import {resolve} from 'node:path';
+import {dirname, resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
 
 import stubbedFs from 'mock-fs';
 import {After, Before, When} from '@cucumber/cucumber';
 
-import {removeGreenkeeper} from '../../../../lib/index.cjs.js';
+// eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved
+import {removeGreenkeeper} from '@form8ion/remove-greenkeeper';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));        // eslint-disable-line no-underscore-dangle
 
 Before(async function () {
   stubbedFs({

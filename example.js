@@ -1,7 +1,7 @@
 // #### Import
 // remark-usage-ignore-next
 import stubbedFs from 'mock-fs';
-import {removeGreenkeeper} from './lib/index.cjs.js';
+import {removeGreenkeeper} from './lib/index.js';
 
 // remark-usage-ignore-next
 stubbedFs({'README.md': ''});
