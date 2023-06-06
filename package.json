@@ -76,6 +76,6 @@
     "rollup": "3.23.1",
     "rollup-plugin-auto-external": "2.0.0",
     "vfile": "5.3.7",
-    "vitest": "0.31.4"
+    "vitest": "0.32.0"
   }
 }
