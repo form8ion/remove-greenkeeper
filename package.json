@@ -12,8 +12,8 @@
   "bugs": "https://github.com/form8ion/remove-greenkeeper/issues",
   "homepage": "https://npm.im/@form8ion/remove-greenkeeper",
   "runkitExampleFilename": "./example.js",
-  "main": "./lib/index.js",
   "exports": "./lib/index.js",
+  "main": "./lib/index.js",
   "sideEffects": false,
   "scripts": {
     "test": "npm-run-all --print-label build --parallel lint:* --parallel test:*",
@@ -40,7 +40,8 @@
     "test:integration:focus": "run-s 'test:integration:base -- --profile focus'",
     "lint:peer": "npm ls >/dev/null",
     "prepare": "husky install",
-    "lint:engines": "ls-engines"
+    "lint:engines": "ls-engines",
+    "lint:publish": "publint --strict"
   },
   "files": [
     "example.js",
@@ -74,6 +75,7 @@
     "ls-engines": "0.9.1",
     "mock-fs": "5.2.0",
     "npm-run-all2": "6.1.1",
+    "publint": "0.2.6",
     "remark-cli": "12.0.0",
     "remark-toc": "9.0.0",
     "remark-usage": "11.0.1",
