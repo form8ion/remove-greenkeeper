@@ -7,6 +7,7 @@ it is time to enable removing it from existing projects.
 <!--status-badges start -->
 
 [![Node CI Workflow Status][github-actions-ci-badge]][github-actions-ci-link]
+[![Codecov][coverage-badge]][coverage-link]
 
 <!--status-badges end -->
 
@@ -114,3 +115,7 @@ $ npm test
 [github-actions-ci-badge]: https://github.com/form8ion/remove-greenkeeper/workflows/Node.js%20CI/badge.svg
 
 [node-badge]: https://img.shields.io/node/v/@form8ion/remove-greenkeeper?logo=node.js
+
+[coverage-link]: https://codecov.io/github/form8ion/remove-greenkeeper
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/form8ion/remove-greenkeeper?logo=codecov
