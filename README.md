@@ -105,7 +105,7 @@ $ npm test
 
 [npm-link]: https://www.npmjs.com/package/@form8ion/remove-greenkeeper
 
-[npm-badge]: https://img.shields.io/npm/v/@form8ion/remove-greenkeeper.svg
+[npm-badge]: https://img.shields.io/npm/v/@form8ion/remove-greenkeeper?logo=npm
 
 [runkit-link]: https://npm.runkit.com/@form8ion/remove-greenkeeper
 
